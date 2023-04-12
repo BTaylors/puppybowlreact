@@ -15,9 +15,6 @@
 #navbar {
 	display: flex;
 	padding: 10px;
-
-	height: 250px;
-	width: 500px;
 	color: black;
 	background-color: white;
 }

@@ -21,7 +21,7 @@ export default function SinglePlayer() {
 			{dog && (
 				<ul>
 					<li>Name: {dog.name}</li>
-					<li>Age: {dog.age}</li>
+					<li>Breed: {dog.breed}</li>
 				</ul>
 			)}
 		</div>

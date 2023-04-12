@@ -1,6 +1,6 @@
 import React from "react";
-import addNewPlayer from "puppies.js";
-
+import { addNewPlayer } from "../ajaxHelpers/puppies.js";
+import "../App.css";
 export default function NewPlayerForm() {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");

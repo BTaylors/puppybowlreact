@@ -1,6 +1,23 @@
+#root {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+}
+
 .container {
 	height: 500px;
 	width: 500px;
 	background-color: white;
 	color: black;
+}
+
+#navbar {
+	display: flex;
+	padding: 10px;
+
+	height: 250px;
+	width: 500px;
+	color: black;
+	background-color: white;
 }

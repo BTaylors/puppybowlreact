@@ -1,25 +1,27 @@
 import { useState, useEffect } from "react";
-import { fetchAllPlayers } from "./ajaxHelpers";
-import { useNavigate } from "react";
+import { useNavigate } from "react-router-dom";
+import { fetchAllPlayers } from "../ajaxHelpers/puppies";
+import "../App.css";
 
 export default function AllPlayers() {
 	const naviagte = useNavigate();
-	const [dogs, setDogs] = useState({});
+	const [dogs, setDogs] = useState([]);
 
 	useEffect(() => {
-		async function fetchAllPlayers() {
+		async function getAllPlayers() {
 			const playerList = await fetchAllPlayers();
 			setDogs(playerList);
 		}
-		fetchAllPlayers();
+		getAllPlayers();
 	}, []);
 	return (
 		<div>
 			{dogs.map((dog) => {
 				return (
 					<p
+						key={dog.id}
 						onClick={() => {
-							naviagte(`/${dog.id}`);
+							naviagte(`/dog/${dog.id}`);
 						}}
 					>
 						{dog.name}

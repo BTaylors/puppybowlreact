@@ -1,12 +1,11 @@
-const cohortName = "2301-ftb-et-web-am";
-// Use the APIURL variable for fetch requests
+const cohortName = "2301-FTB-ET-WEB-AM";
+
 const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/`;
 
 export const fetchAllPlayers = async () => {
 	try {
 		const response = await fetch(`${APIURL}/api/players`);
 		const result = await response.json();
-		//render players to page
 		return result.data.players;
 	} catch (error) {
 		console.error("Oops, I couldn't fetch the players!", error);
@@ -23,18 +22,20 @@ export const fetchSinglePlayer = async (playerId) => {
 	}
 };
 
-export const addNewPlayer = async (playerObj) => {
+export const addNewPlayer = async (name, breed) => {
 	try {
 		const response = await fetch(`${APIURL}/api/players`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify(playerObj),
+			body: JSON.stringify({
+				name,
+				breed,
+			}),
 		});
-		const singlePlayerFromServer = await response.json();
-		console.log(singlePlayerFromServer);
-		return singlePlayerFromServer;
+		const createdDog = await response.json();
+		return createdDog;
 	} catch (error) {
 		console.error("Oops, I couldn't add that player!");
 	}

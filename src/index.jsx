@@ -1,11 +1,13 @@
-import { fetchAllPlayers } from "./ajaxHelpers";
-import { renderAllPlayers, renderNewPlayerForm } from "./renderHelpers";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import "./index.css";
 
-const init = async () => {
-	const players = await fetchAllPlayers();
-	renderAllPlayers(players);
-
-	renderNewPlayerForm();
-};
-
-init();
+ReactDOM.createRoot(document.getElementById("root")).render(
+	<React.StrictMode>
+		<BrowserRouter>
+			<App />
+		</BrowserRouter>
+	</React.StrictMode>
+);

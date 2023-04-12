@@ -5,16 +5,19 @@
 	text-align: center;
 }
 
-.container {
-	height: 500px;
-	width: 500px;
-	background-color: white;
-	color: black;
-}
-
 #navbar {
 	display: flex;
+	justify-content: center;
+	justify-content: space-between;
+	align-items: center;
 	padding: 10px;
 	color: black;
 	background-color: white;
+}
+
+li {
+	margin: 20px;
+	padding: 10px;
+	border-style: solid;
+	border-width: 2px;
 }

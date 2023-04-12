@@ -22,6 +22,8 @@ export default function SinglePlayer() {
 				<ul>
 					<li>Name: {dog.name}</li>
 					<li>Breed: {dog.breed}</li>
+					<li>Status: {dog.status}</li>
+					<li>{dog.imageUrl}</li>
 				</ul>
 			)}
 		</div>

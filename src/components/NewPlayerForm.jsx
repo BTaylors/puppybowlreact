@@ -3,14 +3,14 @@ import { addNewPlayer } from "../ajaxHelpers/puppies.js";
 import "../App.css";
 export default function NewPlayerForm() {
 	const [name, setName] = useState("");
-	const [email, setEmail] = useState("");
+	const [breed, setBreed] = useState("");
 	return (
 		<div>
 			<h2>Create a new dog!</h2>
 			<form
 				onSubmit={async (e) => {
 					e.preventDefault();
-					const newDog = await addNewPlayer(name, email);
+					const newDog = await addNewPlayer(name, breed);
 					console.log("New Dog from API: ", newDog);
 				}}
 			>

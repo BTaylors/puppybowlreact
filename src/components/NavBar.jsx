@@ -4,9 +4,8 @@ export default function navbar() {
 	return (
 		<div id="navbar">
 			<Link to="/">Home</Link>
-			<Link to="/player">All Players</Link>
-			<Link to="/player.id">Single Player</Link>
-			<Link to="./NewPlayerForm.jsx">New Player</Link>
+			<Link to="/player.id">Find a Dog</Link>
+			<Link to="./NewPlayerForm.jsx">New Dog!</Link>
 		</div>
 	);
 }

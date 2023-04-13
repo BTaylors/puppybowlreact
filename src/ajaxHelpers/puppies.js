@@ -12,9 +12,9 @@ export const fetchAllPlayers = async () => {
 	}
 };
 
-export const fetchSinglePlayer = async (playerId) => {
+export const fetchSinglePlayer = async (id) => {
 	try {
-		const response = await fetch(`${APIURL}/players/${playerId}`);
+		const response = await fetch(`${APIURL}/players/${id}`);
 		const result = await response.json();
 		console.log("result", result);
 		return result.data.player;
@@ -41,18 +41,18 @@ export const addNewPlayer = async (name, breed) => {
 		console.error("Oops, I couldn't add that player!");
 	}
 };
-
-export const removePlayer = async (playerId) => {
+export const removePlayer = async (id) => {
 	try {
-		const response = await fetch(`${APIURL}/players${playerId}`, {
+		console.log("Remove Player ID", id);
+		const response = await fetch(`${APIURL}players/${id}`, {
 			method: "DELETE",
 			headers: {
 				"Content-type": "application/json",
 			},
 		});
-		const deletedPlayer = await response.json();
-		console.log(deletedPlayer);
-		return deletedPlayer;
+		const result = await response.json();
+		console.log(result);
+		return result;
 	} catch (error) {
 		console.error("Oops, I couldn't delete that player!");
 	}

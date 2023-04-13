@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchSinglePlayer } from "../ajaxHelpers/puppies.js";
+import { removePlayer } from "../ajaxHelpers/puppies.js";
 import { useParams } from "react-router-dom";
 import "../App.css";
 
@@ -15,7 +16,6 @@ export default function SinglePlayer() {
 		}
 		getDog();
 	}, []);
-	console.log("Dog: ", dog);
 	return (
 		<div>
 			{dog && (
@@ -23,9 +23,18 @@ export default function SinglePlayer() {
 					<li>Name: {dog.name}</li>
 					<li>Breed: {dog.breed}</li>
 					<li>Status: {dog.status}</li>
-					<li>{dog.imageUrl}</li>
+					<li>
+						<img src={dog.imageUrl} />
+					</li>
 				</ul>
 			)}
+			<button
+				id="removeButton"
+				onClick={() => removePlayer(dog.id)}
+				type="submit"
+			>
+				Delete dog!
+			</button>
 		</div>
 	);
 }

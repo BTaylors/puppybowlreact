@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { addNewPlayer } from "../ajaxHelpers/puppies.js";
 import "../App.css";
+
 export default function NewPlayerForm() {
 	const [name, setName] = useState("");
 	const [breed, setBreed] = useState("");
@@ -16,7 +17,8 @@ export default function NewPlayerForm() {
 			>
 				<label htmlFor="name">Name:</label>
 				<input type="text" onChange={(e) => setName(e.target.value)} />
-				<label htmlFor="breed">Breed</label>
+				<br />
+				<label htmlFor="breed">Breed:</label>
 				<input type="text" onChange={(e) => setBreed(e.target.value)} />
 				<button>Submit</button>
 			</form>
